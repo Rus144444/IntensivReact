@@ -5,7 +5,6 @@ import {CharacterPage} from "./pages/CharacterPage/CharacterPage"
 import {EpisodePage} from "./pages/EpisodePage/EpisodePage"
 import {LocationsPage} from "./pages/LocationsPage/LocationsPage"
 import './App.css'
-// import { NavLink } from "react-router"
 
 function App() {
 
