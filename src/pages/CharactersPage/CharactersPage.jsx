@@ -2,9 +2,10 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import { PageTitle } from "../../common/components/PageTitle/PageTitle"
 import s from "./CharactersPage.module.css"
+import { Link } from "react-router"
 
  
-export const CharacterPage = () => {
+export const CharactersPage = () => {
     const [error, setError] = useState(null)
     const [character, seCharacter] = useState()
     const [info, setInfo] = useState({
@@ -55,7 +56,7 @@ return(
         {!error && <ul className={s.characters}>{character?.map(ch => (
             <li key={ch.id}>
                 <div className={s.character}>
-                    <div className={s.characterLink}>{ch.name}</div>
+                    <Link to={`/characters/${ch.id}`} className={s.characterLink} >{ch.name}</Link>
                     <img src={ch.image} alt={`${ch.name} avatar`} />
                 </div>
             </li>

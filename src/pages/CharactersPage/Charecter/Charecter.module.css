@@ -1,0 +1,98 @@
+.pageContainer {
+    width: 1400px;
+    margin: 0 auto 50px;
+}
+
+.container {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: var(--slate-700);
+    border-radius: 10px;
+}
+
+.pageTitle {
+    color: var(--slate-50);
+    text-align: center;
+    font-size: 52px;
+    margin-bottom: 40px;
+}
+
+.content {
+    display: flex;
+    gap: 50px;
+}
+
+.img {
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.description {
+    flex: 1;
+}
+
+.statusContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 28px;
+    color: var(--slate-50);
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.statusDot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+.alive {
+    background: var(--green-500);
+}
+
+.dead {
+    background: var(--red-600);
+}
+
+.unknown {
+    background: var(--slate-400);
+}
+
+.info {
+    margin-bottom: 25px;
+}
+
+.subTitle {
+    margin: 0;
+    color: var(--slate-400);
+    font-size: 18px;
+}
+
+.subTitleResult {
+    margin-top: 5px;
+    color: var(--slate-50);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.backButton {
+    display: block;
+    width: 220px;
+    margin: 40px auto 0;
+    text-align: center;
+    text-decoration: none;
+    color: var(--slate-50);
+    background-color: var(--slate-800);
+    padding: 12px;
+    border-radius: 5px;
+    border: 2px solid var(--slate-800);
+    font-size: 24px;
+    transition: 0.2s;
+}
+
+.backButton:hover {
+    background-color: var(--slate-50);
+    color: var(--slate-800);
+}

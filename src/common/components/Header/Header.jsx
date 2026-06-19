@@ -5,10 +5,10 @@ import s from "./Header.module.css"
 export const Header = () => {
   return (
     <div className={s.container}>
-      <NavLink to={"IntensivReact"}>
+      <NavLink to={"/"}>
         <img className={s.logo} src={logo} alt="lototype" />
       </NavLink>
-      <NavLink to={"IntensivReact"} className={s.headerLink}>
+      <NavLink to={"/"} className={s.headerLink}>
         Home
       </NavLink>
       <NavLink to={"/characters"} className={s.headerLink}>
