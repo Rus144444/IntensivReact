@@ -5,8 +5,9 @@ import s from "./CharacterPage.module.css"
 
  
 export const CharacterPage = () => {
+    const [error, setError] = useState(null)
     const [character, seCharacter] = useState()
-     const [info, setInfo] = useState({
+    const [info, setInfo] = useState({
         count: 0,
         pages: 0,
         next: null,
@@ -18,9 +19,17 @@ export const CharacterPage = () => {
     axios.get(url).then((res) => {
       seCharacter(res.data.results)
       setInfo(res.data.info)
+      setError(null)
     })
+    .catch((err) => {
+        setError(err.response.data.error)
+      })
   }
 
+  const searchHandler = (event) => {
+    const value = event.currentTarget.value
+    fetchData(`https://rickandmortyapi.com/api/character?name=${value}`)
+  }
 
     useEffect(() => {
         axios.get("https://rickandmortyapi.com/api/character?page=2").then((res) => {
@@ -40,8 +49,10 @@ export const CharacterPage = () => {
 return( 
 
     <div className="pageContainer"> 
+        <input type="search" className={s.search} onChange={searchHandler} placeholder="Search..." />
         <PageTitle style={{fontSize: "70px"}} title="CharacterPage" />
-        <ul className={s.characters}>{character?.map(ch => (
+        {error && <div className={s.errorMessage}>{error}</div>}
+        {!error && <ul className={s.characters}>{character?.map(ch => (
             <li key={ch.id}>
                 <div className={s.character}>
                     <div className={s.characterLink}>{ch.name}</div>
@@ -49,7 +60,7 @@ return(
                 </div>
             </li>
         ))}    
-        </ul>
+        </ul>}
         <div className={s.buttonContainer}>
             <button className={s.linkButton} disabled={info.prev === null} onClick={previousPageHandler}>
               Назад
