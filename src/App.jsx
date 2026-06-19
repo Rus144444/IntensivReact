@@ -12,7 +12,7 @@ function App() {
     <div>
       <Header/>
       <Routes>
-        <Route  path="/" element={<HomePage />}/>
+        <Route  path="IntensivReact" element={<HomePage />}/>
         <Route  path="/characters" element={<CharacterPage />}/>
         <Route  path="/episodes" element={<EpisodePage />}/>
         <Route  path="/locations" element={<LocationsPage />}/>
