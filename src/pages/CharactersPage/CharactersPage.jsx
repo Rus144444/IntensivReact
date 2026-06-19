@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
 import { PageTitle } from "../../common/components/PageTitle/PageTitle"
-import s from "./CharacterPage.module.css"
+import s from "./CharactersPage.module.css"
 
  
 export const CharacterPage = () => {
