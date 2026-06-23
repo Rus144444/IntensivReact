@@ -3,7 +3,6 @@ import axios from "axios"
 import { PageTitle } from "../../common/components/PageTitle/PageTitle"
 import s from "./CharactersPage.module.css"
 import { Link } from "react-router"
-
  
 export const CharactersPage = () => {
     const [error, setError] = useState(null)
@@ -15,8 +14,7 @@ export const CharactersPage = () => {
         prev: null,
       }
     )
-
-    const fetchData = (url) => {
+  const fetchData = (url) => {
     axios.get(url).then((res) => {
       seCharacter(res.data.results)
       setInfo(res.data.info)
@@ -26,12 +24,10 @@ export const CharactersPage = () => {
         setError(err.response.data.error)
       })
   }
-
   const searchHandler = (event) => {
     const value = event.currentTarget.value
     fetchData(`https://rickandmortyapi.com/api/character?name=${value}`)
   }
-
     useEffect(() => {
         axios.get("https://rickandmortyapi.com/api/character?page=2").then((res) => {
         seCharacter(res.data.results)
@@ -42,13 +38,11 @@ export const CharactersPage = () => {
     const nextPageHandler = () => {
        fetchData(info.next)
     }
- 
     const previousPageHandler = () => {
        fetchData(info.prev)
     }
 
 return( 
-
     <div className="pageContainer"> 
         <input type="search" className={s.search} onChange={searchHandler} placeholder="Search..." />
         <PageTitle style={{fontSize: "70px"}} title="CharacterPage" />
@@ -56,7 +50,7 @@ return(
         {!error && <ul className={s.characters}>{character?.map(ch => (
             <li key={ch.id}>
                 <div className={s.character}>
-                    <Link to={`/characters/${ch.id}`} className={s.characterLink} >{ch.name}</Link>
+                    <Link to={`/IntensivReact/characters/${ch.id}`} className={s.characterLink} >{ch.name}</Link>
                     <img src={ch.image} alt={`${ch.name} avatar`} />
                 </div>
             </li>

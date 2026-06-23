@@ -13,11 +13,11 @@ function App() {
     <div>
       <Header/>
       <Routes>
-        <Route  path="/" element={<HomePage />}/>
-        <Route  path="/characters" element={<CharactersPage />}/>
-        <Route  path="/characters/:id" element={<Character />}/>
-        <Route  path="/episodes" element={<EpisodePage />}/>
-        <Route  path="/locations" element={<LocationsPage />}/>
+        <Route  path="/IntensivReact" element={<HomePage />}/>
+        <Route  path="/IntensivReact/characters" element={<CharactersPage />}/>
+        <Route  path="/IntensivReact/characters/:id" element={<Character />}/>
+        <Route  path="/IntensivReact/episodes" element={<EpisodePage />}/>
+        <Route  path="/IntensivReact/locations" element={<LocationsPage />}/>
       </Routes>
     </div>
   )

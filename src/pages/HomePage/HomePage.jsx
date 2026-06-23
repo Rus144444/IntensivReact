@@ -2,9 +2,6 @@ import { NavLink } from "react-router"
 import {PageTitle} from "../../common/components/PageTitle/PageTitle"
 import s from "./HomePage.module.css"
 
-
-
-
 export const HomePage = () => {
   return (
     <div className={s.mainWrapper}>
