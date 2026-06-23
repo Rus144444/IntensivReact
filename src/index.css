@@ -32,3 +32,45 @@ body {
   width: 1400px;
   margin: 0 auto 50px;
 }
+
+.linkButton {
+  margin: 10px;
+  padding: 10px;
+  color: var(--slate-50);
+  background-color: var(--slate-800);
+  text-decoration: none;
+  font-size: 24px;
+  width: 200px;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid var(--slate-800);
+ 
+  &:hover {
+    color: var(--slate-800);
+    background-color: var(--slate-50);
+    border: 2px solid var(--slate-800);
+    cursor: pointer;
+  }
+    &:disabled {
+    background-color: var(--slate-200);
+    color: var(--slate-700);
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.search {
+  height: 60px;
+  border: 2px solid var(--slate-700);
+  font-size: 24px;
+  padding-left: 10px;
+  border-radius: 5px;
+  margin: 20px 0 30px 10px;
+  width: calc(100% - 60px);
+}

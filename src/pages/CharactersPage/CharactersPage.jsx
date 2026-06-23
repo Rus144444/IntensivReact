@@ -44,8 +44,8 @@ export const CharactersPage = () => {
 
 return( 
     <div className="pageContainer"> 
-        <input type="search" className={s.search} onChange={searchHandler} placeholder="Search..." />
         <PageTitle style={{fontSize: "70px"}} title="CharacterPage" />
+        <input type="search" className="search" onChange={searchHandler} placeholder="Search..." />
         {error && <div className={s.errorMessage}>{error}</div>}
         {!error && <ul className={s.characters}>{character?.map(ch => (
             <li key={ch.id}>
@@ -56,11 +56,11 @@ return(
             </li>
         ))}    
         </ul>}
-        <div className={s.buttonContainer}>
-            <button className={s.linkButton} disabled={info.prev === null} onClick={previousPageHandler}>
+        <div className="buttonContainer">
+            <button className="linkButton" disabled={info.prev === null} onClick={previousPageHandler}>
               Назад
             </button>
-            <button className={s.linkButton} disabled={info.next === null} onClick={nextPageHandler}>
+            <button className="linkButton" disabled={info.next === null} onClick={nextPageHandler}>
               Вперед
             </button>
         </div>
