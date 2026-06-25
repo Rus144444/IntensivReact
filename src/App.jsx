@@ -6,6 +6,7 @@ import { Character} from "./pages/CharactersPage/Charecter/Charecter"
 import { EpisodePage} from "./pages/EpisodePage/EpisodePage"
 import { Episode } from "./pages/EpisodePage/Episode/Episode"
 import { LocationsPage } from "./pages/LocationsPage/LocationsPage"
+import { Location } from "./pages/LocationsPage/Location/Location"
 import './App.css'
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route  path="/IntensivReact/episodes" element={<EpisodePage />}/>
         <Route  path="/IntensivReact/episode/:id" element={<Episode />}/>
         <Route  path="/IntensivReact/locations" element={<LocationsPage />}/>
+        <Route  path="/IntensivReact/location/:id" element={<Location />}/>
       </Routes>
     </div>
   )

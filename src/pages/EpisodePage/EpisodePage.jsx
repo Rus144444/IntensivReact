@@ -30,7 +30,7 @@ export const EpisodePage = () => {
     fetchData(`https://rickandmortyapi.com/api/episode?name=${value}`)
   }
     useEffect(() => {
-        axios.get("https://rickandmortyapi.com/api/character?page=2").then((res) => {
+        axios.get("https://rickandmortyapi.com/api/episode?page=1").then((res) => {
         setEpisodes(res.data.results)
         setInfo(res.data.info)
         })

@@ -24,19 +24,19 @@ export const Character = () => {
         );
     }
     return (
-        <div className={s.pageContainer}>
-            <div className={s.container}>
-                <h1 className={s.pageTitle}>
+        <div className="pageContainer">
+            <div className="container">
+                <h1 className="pageTitle">
                     {character.name}
                 </h1>
-                 <div className={s.content}>
+                 <div className="content">
                     <img
-                        className={s.img}
+                        className="img"
                         src={character.image}
                         alt={character.name}
                     />
-                    <div className={s.description}>
-                        <div className={s.statusContainer}>
+                    <div className="description">
+                        <div className="statusContainer">
                             <span
                                 className={`${s.statusDot} ${
                                     character.status === "Alive"
@@ -48,27 +48,27 @@ export const Character = () => {
                             />
                             {character.status} — {character.species}
                         </div>
-                        <div className={s.info}>
-                            <p className={s.subTitle}>Gender</p>
-                            <p className={s.subTitleResult}>
+                        <div className="info">
+                            <p className="subTitle">Gender</p>
+                            <p className="subTitleResult">
                                 {character.gender}
                             </p>
                         </div>
-                        <div className={s.info}>
-                            <p className={s.subTitle}>Origin</p>
-                            <p className={s.subTitleResult}>
+                        <div className="info">
+                            <p className="subTitle">Origin</p>
+                            <p className="subTitleResult">
                                 {character.origin.name}
                             </p>
                         </div>
-                        <div className={s.info}>
-                            <p className={s.subTitle}>Last known location</p>
-                            <p className={s.subTitleResult}>
+                        <div className="info">
+                            <p className="subTitle">Last known location</p>
+                            <p className="subTitleResult">
                                 {character.location.name}
                             </p>
                         </div>
-                        <div className={s.info}>
-                            <p className={s.subTitle}>Episode count</p>
-                            <p className={s.subTitleResult}>
+                        <div className="info">
+                            <p className="subTitle">Episode count</p>
+                            <p className="subTitleResult">
                                 {character.episode.length}
                             </p>
                         </div>
@@ -76,7 +76,7 @@ export const Character = () => {
                 </div>
                 <Link
                     to="/IntensivReact/characters"
-                    className={s.backButton}
+                    className="backButton"
                 >
                     ← Go Back
                 </Link>
