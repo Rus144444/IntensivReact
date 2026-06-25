@@ -23,10 +23,3 @@
     text-decoration: none;
   }
 }
-
-
-.errorMessage {
-  color: var(--red-600);
-  text-align: center;
-  font-size: 50px;
-}

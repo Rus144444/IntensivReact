@@ -6,7 +6,7 @@ import { Link } from "react-router"
  
 export const CharactersPage = () => {
     const [error, setError] = useState(null)
-    const [character, seCharacter] = useState()
+    const [character, seCharacter] = useState(null)
     const [info, setInfo] = useState({
         count: 0,
         pages: 0,
@@ -46,8 +46,8 @@ return(
     <div className="pageContainer"> 
         <PageTitle style={{fontSize: "70px"}} title="CharacterPage" />
         <input type="search" className="search" onChange={searchHandler} placeholder="Search..." />
-        {error && <div className={s.errorMessage}>{error}</div>}
-        {!error && <ul className={s.characters}>{character?.map(ch => (
+        {error && <div className="errorMessage">{error}</div>}
+        {!error && <div><ul className={s.characters}>{character?.map(ch => (
             <li key={ch.id}>
                 <div className={s.character}>
                     <Link to={`/IntensivReact/characters/${ch.id}`} className={s.characterLink} >{ch.name}</Link>
@@ -55,7 +55,7 @@ return(
                 </div>
             </li>
         ))}    
-        </ul>}
+        </ul>
         <div className="buttonContainer">
             <button className="linkButton" disabled={info.prev === null} onClick={previousPageHandler}>
               Назад
@@ -64,5 +64,6 @@ return(
               Вперед
             </button>
         </div>
+      </div>}
     </div>
 )}
