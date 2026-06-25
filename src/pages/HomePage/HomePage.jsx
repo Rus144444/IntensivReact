@@ -7,9 +7,9 @@ export const HomePage = () => {
     <div className={s.mainWrapper}>
       <PageTitle style = {{fontSize: "100px"}} title="The Rick and Morty" />
        <nav className={s.linkWrapper}>
-          <NavLink to="/characters" className={s.linkButton}>Character</NavLink>
-          <NavLink to="/episodes" className={s.linkButton}>Episode</NavLink>
-          <NavLink to="/locations" className={s.linkButton}>Location</NavLink>
+          <NavLink to="/IntensivReact/characters" className={s.linkButton}>Character</NavLink>
+          <NavLink to="/IntensivReact/episodes" className={s.linkButton}>Episode</NavLink>
+          <NavLink to="/IntensivReact/locations" className={s.linkButton}>Location</NavLink>
       </nav>
     </div>
     
