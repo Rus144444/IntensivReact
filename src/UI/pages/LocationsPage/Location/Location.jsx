@@ -1,24 +1,10 @@
-import { useEffect, useState } from "react"
-import axios from "axios"
-import {Link, useParams } from "react-router";
-
+import {Link } from "react-router";
+import { useLocation } from "../../../../BLL/useLocation"
 
 export const Location = () => {
-    const { id } = useParams();
-    const [ element, setElement ] = useState(null)
-    useEffect(() => {
-      axios.get(`https://rickandmortyapi.com/api/location/${id}`)
-      .then((res)=> {
-         setElement(res.data)
-      })
-   
-   }, [])
-
-   if(!element) <div>
-                   <h2>Loading...</h2>
-               </div>
-
-   return (
+    const {element} = useLocation()
+    if(!element) <div><h2>Loading...</h2></div>
+    return (
       <div className="pageContainer">
             <div className="container">
                 <h1 className="pageTitle">{element?.name}</h1>
