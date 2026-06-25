@@ -7,7 +7,6 @@ import { EpisodePage} from "./pages/EpisodePage/EpisodePage"
 import { Episode } from "./pages/EpisodePage/Episode/Episode"
 import { LocationsPage } from "./pages/LocationsPage/LocationsPage"
 import { Location } from "./pages/LocationsPage/Location/Location"
-import './App.css'
 
 function App() {
 
