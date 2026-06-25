@@ -1,6 +1,7 @@
 import {PageTitle} from "../../common/components/PageTitle/PageTitle"
 import { Link } from "react-router"
 import { useLocationsPage } from "../../../BLL/useLocationsPage"
+import { PATH } from "../../common/routing/path"
 
 export const LocationsPage = () => {
    const {info,error,locations,previousPageHandler,nextPageHandler,searchHandler} = useLocationsPage()
@@ -14,7 +15,7 @@ export const LocationsPage = () => {
 
                   {locations && locations.map((location) => <div key={location.id}>
                   <ul>
-                     <Link to={`/IntensivReact/location/${location.id}`}>{location.name}</Link>
+                     <Link to={`${PATH.LOCATIONS}/${location.id}`}>{location.name}</Link>
                      <li className="item">{location.type}</li>
                      <li>{location.dimension}</li>
                      <li>{location.url}</li>

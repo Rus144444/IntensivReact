@@ -7,20 +7,20 @@ import { EpisodePage} from "./pages/EpisodePage/EpisodePage"
 import { Episode } from "./pages/EpisodePage/Episode/Episode"
 import { LocationsPage } from "./pages/LocationsPage/LocationsPage"
 import { Location } from "./pages/LocationsPage/Location/Location"
+import { PATH } from "./common/routing/path"
 
 function App() {
-
   return (
     <div>
       <Header/>
       <Routes>
-        <Route  path="/IntensivReact" element={<HomePage />}/>
-        <Route  path="/IntensivReact/characters" element={<CharactersPage />}/>
-        <Route  path="/IntensivReact/characters/:id" element={<Character />}/>
-        <Route  path="/IntensivReact/episodes" element={<EpisodePage />}/>
-        <Route  path="/IntensivReact/episode/:id" element={<Episode />}/>
-        <Route  path="/IntensivReact/locations" element={<LocationsPage />}/>
-        <Route  path="/IntensivReact/location/:id" element={<Location />}/>
+        <Route path={PATH.HOME} element={<HomePage />} />
+        <Route path={PATH.CHARACTERS} element={<CharactersPage />} />
+        <Route path={PATH.CHARACTER} element={<Character />} />
+        <Route path={PATH.EPISODES} element={<EpisodePage />} />
+        <Route path={PATH.EPISODE} element={<Episode />} />
+        <Route path={PATH.LOCATIONS} element={<LocationsPage />} />
+        <Route path={PATH.LOCATION} element={<Location />} />
       </Routes>
     </div>
   )

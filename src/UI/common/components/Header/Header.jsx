@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import logo from "../../../../assets/img/image.png"
 import s from "./Header.module.css"
+import { PATH } from "../../routing/path";
  
 export const Header = () => {
   return (
@@ -8,16 +9,16 @@ export const Header = () => {
       <Link to={"/IntensivReact"}>
         <img className={s.logo} src={logo} alt="lototype" />
       </Link>
-      <Link to={"/IntensivReact"} className={s.headerLink}>
+      <Link to={PATH.HOME} className={s.headerLink}>
         Home
       </Link>
-      <Link to={"/IntensivReact/characters"} className={s.headerLink}>
+      <Link to={PATH.CHARACTERS} className={s.headerLink}>
         Characters
       </Link>
-      <Link to={"/IntensivReact/locations"} className={s.headerLink}>
+      <Link to={PATH.LOCATIONS} className={s.headerLink}>
         Locations
       </Link>
-      <Link to={"IntensivReact/episodes"} className={s.headerLink}>
+      <Link to={PATH.EPISODES} className={s.headerLink}>
         Episodes
       </Link>
     </div>

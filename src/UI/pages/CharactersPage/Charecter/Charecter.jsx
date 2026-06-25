@@ -1,9 +1,16 @@
 import { Link } from "react-router";
 import { useCharacter } from "../../../../BLL/useCharacter";
 import s from "./Charecter.module.css";
+import { PATH } from "../../../common/routing/path";
 
-export const Character = () => {
+export const Character = () => {    
     const {character} = useCharacter()
+    const statusClass = character?.status === "Alive" 
+        ? s.alive
+        : character?.status === "Dead"
+        ? s.dead
+        : s.unknown
+
     if (!character) {
         return (
             <div className={s.pageContainer}>
@@ -11,6 +18,7 @@ export const Character = () => {
             </div>
         );
     }
+
     return (
         <div className="pageContainer">
             <div className="container">
@@ -25,15 +33,7 @@ export const Character = () => {
                     />
                     <div className="description">
                         <div className="statusContainer">
-                            <span
-                                className={`${s.statusDot} ${
-                                    character.status === "Alive"
-                                        ? s.alive
-                                        : character.status === "Dead"
-                                        ? s.dead
-                                        : s.unknown
-                                }`}
-                            />
+                           <span className={`${s.statusDot} ${statusClass}`} />
                             {character.status} — {character.species}
                         </div>
                         <div className="info">
@@ -63,7 +63,7 @@ export const Character = () => {
                     </div>
                 </div>
                 <Link
-                    to="/IntensivReact/characters"
+                    to={PATH.CHARACTERS}
                     className="backButton"
                 >
                     ← Go Back

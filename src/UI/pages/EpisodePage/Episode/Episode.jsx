@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { useEpisode } from "../../../../BLL/useEpisode";
+import { PATH } from "../../../common/routing/path";
 
 export const Episode = () => {
     const {episode} = useEpisode()
@@ -51,7 +52,7 @@ export const Episode = () => {
                     </div>
                 </div>
                 <Link
-                    to="/IntensivReact/episodes"
+                    to={PATH.CHARACTERS}
                     className="backButton"
                 >
                     ← Go Back

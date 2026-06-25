@@ -1,6 +1,7 @@
 import { PageTitle } from "../../common/components/PageTitle/PageTitle"
 import { Link } from "react-router"
 import { useEpisodePage } from "../../../BLL/useEpisodePage"
+import { PATH } from "../../common/routing/path"
 
 export const EpisodePage = () => {
     const {info, error, episodes, searchHandler, nextPageHandler, previousPageHandler} = useEpisodePage()
@@ -12,7 +13,7 @@ export const EpisodePage = () => {
             {!error && <div>
                 {episodes && episodes.map((episode) => <div key={episode.id}>
                 <ul>
-                     <Link to={`/IntensivReact/episode/${episode.id}`}>{episode.name}</Link>
+                     <Link to={`${PATH.EPISODES}/${episode.id}`}>{episode.name}</Link>
                     <li className="item">{episode.air_date}</li>
                     <li>{episode.episode}</li>
                     <li>{episode.url}</li>

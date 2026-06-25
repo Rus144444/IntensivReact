@@ -1,5 +1,6 @@
 import {Link } from "react-router";
 import { useLocation } from "../../../../BLL/useLocation"
+import { PATH } from "../../../common/routing/path";
 
 export const Location = () => {
     const {element} = useLocation()
@@ -20,7 +21,7 @@ export const Location = () => {
                         </li>)}
                     </ol>
                 </ul>
-                <Link to="/IntensivReact/locations"
+                <Link to={PATH.LOCATIONS}
                     className="backButton"
                 >
                     ← Go Back
