@@ -16,7 +16,7 @@ return(
         {!error && <div><ul className={s.characters}>{character?.map(ch => (
             <li key={ch.id}>
                 <div className={s.character}>
-                    <Link to={`${PATH.CHARACTER}/${ch.id}`} className={s.characterLink} >{ch.name}</Link>
+                    <Link to={`${PATH.CHARACTERS}/${ch.id}`} className={s.characterLink} >{ch.name}</Link>
                     <img src={ch.image} alt={`${ch.name} avatar`} />
                 </div>
             </li>

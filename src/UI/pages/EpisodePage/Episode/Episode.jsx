@@ -52,7 +52,7 @@ export const Episode = () => {
                     </div>
                 </div>
                 <Link
-                    to={PATH.CHARACTERS}
+                    to={PATH.EPISODES}
                     className="backButton"
                 >
                     ← Go Back
