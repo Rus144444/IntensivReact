@@ -1,53 +1,9 @@
-import axios from "axios"
 import { PageTitle } from "../../common/components/PageTitle/PageTitle"
-import { useState, useEffect } from "react"
 import { Link } from "react-router"
+import { useEpisodePage } from "../../../BLL/useEpisodePage"
 
 export const EpisodePage = () => {
-    const [episodes, setEpisodes] = useState(null)
-    const [error, setError] = useState(null)
-    const [info, setInfo] = useState({
-        count: 0,
-        pages: 0,
-        next: null,
-        prev: null,
-      }
-    )
-
-    const fetchData = (url) => {
-    axios.get(url).then((res) => {
-      setEpisodes(res.data.results)
-      setInfo(res.data.info)
-      setError(null)
-    })
-    .catch((err) => {
-        setError(err.response.data.error)
-      })
-  }
-
-  const searchHandler = (event) => {
-    const value = event.currentTarget.value
-    fetchData(`https://rickandmortyapi.com/api/episode?name=${value}`)
-  }
-    useEffect(() => {
-        axios.get("https://rickandmortyapi.com/api/episode?page=1").then((res) => {
-        setEpisodes(res.data.results)
-        setInfo(res.data.info)
-        })
-    }, [])
- 
-    const nextPageHandler = () => {
-       fetchData(info.next)
-    }
-    const previousPageHandler = () => {
-       fetchData(info.prev)
-    }
-    
-    useEffect(() => {
-        axios.get("https://rickandmortyapi.com/api/episode")
-        .then((res)=> setEpisodes(res.data.results))
-    }, [])
-
+    const {info, error, episodes, searchHandler, nextPageHandler, previousPageHandler} = useEpisodePage()
     return (
         <div>
             <PageTitle style={{fontSize: "70px"}} title="EpisodePage"/>
