@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router";
-import { getLocationById } from "../DAL/api"
+import { getLocationById } from "../DAL/location"
 import {type LocationType} from "../types/location"
 
 export const useLocationDetails = () => {
