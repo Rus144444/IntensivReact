@@ -1,9 +1,9 @@
 import { Link } from "react-router";
-import { useEpisode } from "../../../../BLL/useEpisode";
+import { useEpisodeDetails } from "../../../../BLL/useEpisodeDetails";
 import { PATH } from "../../../common/routing/path";
 
 export const Episode = () => {
-    const {episode} = useEpisode()
+    const {episode} = useEpisodeDetails()
     if (!episode) {
         return (
             <div className="pageContainer">

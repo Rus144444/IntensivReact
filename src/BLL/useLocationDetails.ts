@@ -10,9 +10,8 @@ export const useLocationDetails = () => {
         if (!id) return;
 
         getLocationById(id)
-        .then((data)=> {
-        setCurrentLocation(data)
-      })
+        .then((data)=> setCurrentLocation(data))
+        .catch((err) => console.error(err))
     }, [id])
-    return { currentLocation }
+    return {currentLocation}
 }

@@ -1,15 +1,13 @@
 export type LocationType = {
-id: number;
+    id: number;
     name: string;
     type: string;
     dimension: string;
-    residents: ResidentsType
+    residents: string[];
     url: string;
     created: string;
 }
 
-type ResidentsType = string[];
- 
  export type InfoType = {
   count: number;
   pages: number;
