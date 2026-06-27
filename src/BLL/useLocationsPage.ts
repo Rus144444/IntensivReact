@@ -24,7 +24,8 @@ export const useLocationsPage = () => {
    }, [])
 
    const fetchData = (url: string) => {
-    getLocationsByUrl(url).then((data) => {
+      getLocationsByUrl(url)
+      .then((data) => {
       setLocations(data.results)
       setInfo(data.info)
       setError(null)

@@ -10,7 +10,7 @@ export type EpisodeType = {
       created: string;
     }
 
-export type LocationsResponse = {
+export type EpisodeResponse = {
     results: EpisodeType;
     info: InfoType;
 }

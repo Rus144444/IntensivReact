@@ -13,9 +13,7 @@ export const getLocations = async (): Promise<LocationsResponse> => {
   return data;
 };
 
-export const getLocationsByUrl = async (
-  url: string
-): Promise<LocationsResponse> => {
+export const getLocationsByUrl = async (url: string): Promise<LocationsResponse> => {
   const { data } = await axios.get<LocationsResponse>(url);
   return data;
 };
