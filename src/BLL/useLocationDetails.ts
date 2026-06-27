@@ -8,7 +8,6 @@ export const useLocationDetails = () => {
     const [ currentLocation, setCurrentLocation ] = useState<LocationType | null>(null)
     useEffect(() => {
         if (!id) return;
-
         getLocationById(id)
         .then((data)=> setCurrentLocation(data))
         .catch((err) => console.error(err))
