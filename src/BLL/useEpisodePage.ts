@@ -6,7 +6,7 @@ import type { ChangeEvent } from "react"
 const url = "https://rickandmortyapi.com/api/episode"
 
 export const useEpisodePage = () => {
-    const [episodes, setEpisodes] = useState<EpisodeType|null>(null)
+    const [episodes, setEpisodes] = useState<EpisodeType[]>([])
     const [error, setError] = useState <string|null>(null)
     const [info, setInfo] = useState <InfoType>({
         count: 0,

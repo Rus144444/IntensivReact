@@ -6,7 +6,7 @@ const url = "https://rickandmortyapi.com/api/location"
 
 export const useLocationsPage = () => {
    const [locations, setLocations] = useState<LocationType[]>([])
-   const [error, setError] = useState <string|null>()
+   const [error, setError] = useState <string|null>(null)
    const [info, setInfo] = useState<InfoType>({
         count: 0,
         pages: 0,

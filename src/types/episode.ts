@@ -11,6 +11,6 @@ export type EpisodeType = {
     }
 
 export type EpisodeResponse = {
-    results: EpisodeType;
+    results: EpisodeType[]
     info: InfoType;
 }

@@ -22,31 +22,31 @@ export const Episode = () => {
                         <div className="info">
                             <p className="subTitle">Data</p>
                             <p className="subTitleResult">
-                                {episode?.air_date}
+                                {episode.air_date}
                             </p>
                         </div>
                         <div className="info">
                             <p className="subTitle">Origin</p>
                             <p className="subTitleResult">
-                                {episode?.episode}
+                                {episode.episode}
                             </p>
                         </div>
                         <div className="info">
                             <p className="subTitle">Last known location</p>
                             <div className="subTitleResult">
-                                {episode?.characters.map((character) => <div key={character}>{character}</div>)}
+                                {episode.characters.map((character) => <div key={character}>{character}</div>)}
                             </div>
                         </div>
                         <div className="info">
                             <p className="subTitle">Episode count</p>
                             <p className="subTitleResult">
-                                {episode?.url}
+                                {episode.url}
                             </p>
                         </div>
                         <div className="info">
                             <p className="subTitle">Data count</p>
                             <p className="subTitleResult">
-                                {episode?.created}
+                                {episode.created}
                             </p>
                         </div>
                     </div>

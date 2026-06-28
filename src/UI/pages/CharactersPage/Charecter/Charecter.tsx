@@ -4,13 +4,8 @@ import s from "./Charecter.module.css";
 import { PATH } from "../../../common/routing/path";
 
 export const Character = () => {    
-    const {character} = useCharacter()
-    const statusClass = character?.status === "Alive" 
-        ? s.alive
-        : character?.status === "Dead"
-        ? s.dead
-        : s.unknown
-
+    const {character} = useCharacter()    
+    
     if (!character) {
         return (
             <div className={s.pageContainer}>
@@ -19,7 +14,14 @@ export const Character = () => {
         );
     }
 
+    const statusClass = character.status === "Alive" 
+        ? s.alive
+        : character.status === "Dead"
+        ? s.dead
+        : s.unknown
+        
     return (
+
         <div className="pageContainer">
             <div className="container">
                 <h1 className="pageTitle">

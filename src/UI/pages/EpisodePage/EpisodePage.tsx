@@ -13,7 +13,7 @@ export const EpisodePage = () => {
             {!error && <div>
                 {episodes && episodes.map((episode) => <div key={episode.id}>
                 <ul>
-                     <Link to={`${PATH.EPISODES}/${episode.id}`}>{episode.name}</Link>
+                    <li><Link to={`${PATH.EPISODES}/${episode.id}`}>{episode.name}</Link></li>
                     <li className="item">{episode.air_date}</li>
                     <li>{episode.episode}</li>
                     <li>{episode.url}</li>
@@ -23,10 +23,10 @@ export const EpisodePage = () => {
             </div>)}
 
                 <div className="buttonContainer">
-                    <button className="linkButton" disabled={info.prev === null} onClick={previousPageHandler}>
+                    <button className="linkButton" disabled={!info.prev} onClick={previousPageHandler}>
                         Назад
                     </button>
-                    <button className="linkButton" disabled={info.next === null} onClick={nextPageHandler}>
+                    <button className="linkButton" disabled={!info.next} onClick={nextPageHandler}>
                         Вперед
                     </button>
                 </div>

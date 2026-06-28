@@ -6,7 +6,7 @@ import { PATH } from "../../routing/path";
 export const Header = () => {
   return (
     <div className={s.container}>
-      <Link to={"/IntensivReact"}>
+      <Link to={PATH.HOME}>
         <img className={s.logo} src={logo} alt="lototype" />
       </Link>
       <Link to={PATH.HOME} className={s.headerLink}>

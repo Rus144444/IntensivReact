@@ -13,7 +13,8 @@ return(
         <PageTitle style={{fontSize: "70px"}} title="CharacterPage" />
         <input type="search" className="search" onChange={searchHandler} placeholder="Search..." />
         {error && <div className="errorMessage">{error}</div>}
-        {!error && <div><ul className={s.characters}>{character?.map(ch => (
+        {!error && <div>
+          <ul className={s.characters}>{character?.map(ch => (
             <li key={ch.id}>
                 <div className={s.character}>
                     <Link to={`${PATH.CHARACTERS}/${ch.id}`} className={s.characterLink} >{ch.name}</Link>
@@ -23,10 +24,10 @@ return(
         ))}    
         </ul>
         <div className="buttonContainer">
-            <button className="linkButton" disabled={info.prev === null} onClick={previousPageHandler}>
+            <button className="linkButton" disabled={!info.prev} onClick={previousPageHandler}>
               Назад
             </button>
-            <button className="linkButton" disabled={info.next === null} onClick={nextPageHandler}>
+            <button className="linkButton" disabled={!info.next} onClick={nextPageHandler}>
               Вперед
             </button>
         </div>

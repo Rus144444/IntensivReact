@@ -12,10 +12,9 @@ export const LocationsPage = () => {
                <input type="search" className="search" onChange={searchHandler} placeholder="Search..." />
                {error && <div className="errorMessage">{error}</div>}
                {!error && <div>
-
-                  {locations && locations.map((location) => <div key={location.id}>
+                  {locations.map((location) => <div key={location.id}>
                   <ul>
-                     <Link to={`${PATH.LOCATIONS}/${location.id}`}>{location.name}</Link>
+                     <li><Link to={`${PATH.LOCATIONS}/${location.id}`}>{location.name}</Link></li>
                      <li className="item">{location.type}</li>
                      <li>{location.dimension}</li>
                      <li>{location.url}</li>
@@ -24,10 +23,10 @@ export const LocationsPage = () => {
                   </ul>
                </div>)}
                <div className="buttonContainer">
-                  <button className="linkButton" disabled={info.prev === null} onClick={previousPageHandler}>
+                  <button className="linkButton" disabled={!info.prev} onClick={previousPageHandler}>
                         Назад
                   </button>
-                  <button className="linkButton" disabled={info.next === null} onClick={nextPageHandler}>
+                  <button className="linkButton" disabled={!info.next} onClick={nextPageHandler}>
                         Вперед
                   </button>
                </div>
