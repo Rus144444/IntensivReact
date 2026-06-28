@@ -10,7 +10,7 @@ export type CharacterType = {
     created: string;
 }
 
-export type LocationsResponse = {
+export type CharacterResponse = {
   info: InfoType;
   results: CharacterType[];
 };   
