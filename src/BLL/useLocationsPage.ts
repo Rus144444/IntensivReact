@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import {getLocations, getLocationsByUrl} from "../DAL/location"
+import { getLocationsByUrl} from "../DAL/location"
 import { type LocationType, type InfoType } from "../types/location"     
 import type { ChangeEvent } from "react";
-  
+const url = "https://rickandmortyapi.com/api/location"  
+
 export const useLocationsPage = () => {
    const [locations, setLocations] = useState<LocationType[]>([])
    const [error, setError] = useState <string|null>()
@@ -15,7 +16,7 @@ export const useLocationsPage = () => {
    )
 
    useEffect(() => {
-      getLocations()
+      getLocationsByUrl(url)
       .then((data)=> {
          setLocations(data.results)
          setInfo(data.info)
@@ -37,7 +38,7 @@ export const useLocationsPage = () => {
 
   const searchHandler = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.currentTarget.value
-    fetchData(`https://rickandmortyapi.com/api/location?name=${value}`)
+    fetchData(`${url}?name=${value}`)
   }
  
     const nextPageHandler = () => {

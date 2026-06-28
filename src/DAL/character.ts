@@ -8,11 +8,6 @@ export const getCharacterById = async (id: string):Promise<CharacterType> => {
     return data
 }
 
-export const getCharacter = async (): Promise<CharacterResponse> => {
-    const { data } = await axios<CharacterResponse>(URL)
-    return data
-}
-
 export const getCharacterByUrl = async (url: string): Promise<CharacterResponse> => {
     const { data } = await axios<CharacterResponse>(url)
     return data

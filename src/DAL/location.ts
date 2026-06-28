@@ -8,11 +8,6 @@ export const getLocationById = async (id: string): Promise<LocationType> => {
   return data;
 };
 
-export const getLocations = async (): Promise<LocationsResponse> => {
-  const { data } = await axios.get<LocationsResponse>(URL);
-  return data;
-};
-
 export const getLocationsByUrl = async (url: string): Promise<LocationsResponse> => {
   const { data } = await axios.get<LocationsResponse>(url);
   return data;

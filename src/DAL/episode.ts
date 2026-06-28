@@ -8,11 +8,6 @@ export const getEpisodeById = async (id: string):Promise <EpisodeType> => {
     return data;
 }
 
-export const getEpisode = async ():Promise <EpisodeResponse> => {
-    const { data } = await axios.get<EpisodeResponse>(URL);
-    return data;
-};
-
 export const getEpisodeByUrl = async (url: string): Promise<EpisodeResponse> => {
     const { data } = await axios.get<EpisodeResponse>(url);
     return data

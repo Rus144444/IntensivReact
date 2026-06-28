@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react"
-import { getEpisode, getEpisodeByUrl } from "../DAL/episode"
+import { getEpisodeByUrl } from "../DAL/episode"
 import type { EpisodeType } from "../types/episode"
 import type { InfoType } from "../types/location"
 import type { ChangeEvent } from "react" 
+const url = "https://rickandmortyapi.com/api/episode"
 
 export const useEpisodePage = () => {
     const [episodes, setEpisodes] = useState<EpisodeType|null>(null)
@@ -16,7 +17,7 @@ export const useEpisodePage = () => {
     )
 
      useEffect(() => {
-        getEpisode()
+        getEpisodeByUrl(url)
         .then((data) => {
         setEpisodes(data.results)
         setInfo(data.info)
@@ -35,17 +36,16 @@ export const useEpisodePage = () => {
       })
   }
 
-  const searchHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.currentTarget.value
-    fetchData(`https://rickandmortyapi.com/api/episode?name=${value}`)
-  }
-   
-    const nextPageHandler = () => {
+   const searchHandler = (event: ChangeEvent<HTMLInputElement>) => {
+      const value = event.currentTarget.value
+      fetchData(`${url}?name=${value}`)
+   }
+   const nextPageHandler = () => {
        if(info.next){
           fetchData(info.next)
        }
     }
-    const previousPageHandler = () => {
+   const previousPageHandler = () => {
        if(info.prev) {
           fetchData(info.prev)
        }
